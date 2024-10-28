@@ -16,6 +16,9 @@ const eventDetailsRouter = require('./EventDetails/EventDetalisRouter')
 const maintenanceDetailsRouter = require('./MaintenanceDetails/MaintenanceDetailsRouter')
 const complaintRouter = require('./Complaint/ComplaintRouter')
 const expanseRouter = require('./Expanse/ExpanseRouter')
+const expanseNoteRouter = require('./ExpanseNote/ExpanseNoteRouter')
+const announcementRouter = require('./Announcement/AnnouncementRouter')
+const visitorRouter = require('./Visitor/VisitorRouter')
 
 dotenv.config()
 const app = express()
@@ -39,6 +42,9 @@ app.use('/securityprotocol', securityProtocolRouter)
 app.use('/user', unitRouter)
 app.use('/complain', complaintRouter)
 app.use('/expanse', expanseRouter)
+app.use('/expanseNote', expanseNoteRouter)
+app.use('/announcement', announcementRouter)
+app.use('/visitor', visitorRouter)
 
 
 app.get("/", (req, res) => {

@@ -57,7 +57,7 @@ Society-management-Team`;
 
   async getSecurity(req, res) {
     try {
-      const result = await securityModel.model.find()
+      const result = await securityModel.model.find().populate([{ path: 'societyId' }, { path: 'userId' }])
       if (!result) throw httpErrors[400]
 
       return res.status(200).send({ message: httpSuccess, data: result })

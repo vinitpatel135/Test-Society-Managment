@@ -3,7 +3,7 @@ const { default: mongoose } = require("mongoose");
 class EventModel {
   constructor() {
     this.schema = new mongoose.Schema({
-      societyId: { type: mongoose.Types.ObjectId, required: true, ref: "tbl_Securities" },
+      societyId: { type: mongoose.Types.ObjectId, required: true, ref: "tbl_societies" },
       title: { type: String, required: true },
       date: { type: Date, required: true },
       dueDate: { type: Date, required: true },

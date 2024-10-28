@@ -18,7 +18,7 @@ class SecurityProtocolController {
 
   async getSecurityProtocols(req, res) {
     try {
-      const result = await securityProtocolModel.model.find()
+      const result = await securityProtocolModel.model.find().populate('societyId')
       if (!result) throw httpErrors[400]
 
       return res.status(200).send({ message: httpSuccess, data: result })

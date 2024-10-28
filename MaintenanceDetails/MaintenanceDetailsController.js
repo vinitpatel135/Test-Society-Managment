@@ -46,10 +46,11 @@ class MaintenanceDetailsController {
       }, {
         paymentMethod: paymentMethod,
         paymentStatus: "Done",
-        paymentDate:paymentDate,
-        amount:amount,
-        penaltyAmount:penaltyAmount
+        paymentDate: paymentDate,
+        amount: amount,
+        penaltyAmount: penaltyAmount
       })
+      if (!result && result.updatedCount < 0) throw httpErrors[500]
       return res.status(200).send({ message: httpSuccess })
     } catch (error) {
       console.log(error)
